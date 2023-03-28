@@ -1,0 +1,49 @@
+.Card{
+    margin: 1%;
+    cursor: pointer;
+}
+
+.Card-body{
+    width: 266px;
+    background-color: white;
+    text-align: center;
+}
+
+
+.Card-keyword{
+    text-transform: uppercase;
+    text-align:center;
+}
+
+.Card-img{
+    width: 266px;
+    height: 456px;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transition: transform 1s;
+ 
+}
+
+/* .Card-img{
+    transform: translateX(-100%) rotateY(-180deg);
+
+} */
+
+.Card-name{
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgb(18, 109, 0);
+    text-shadow: 1px 1px 1px greenyellow
+}
+
+@media screen and (min-width:0px) and (max-width:550px){
+    .Card-img{
+        height:150px;
+        width:88px;
+    }
+    .Card-body{
+   
+        width:400px;
+    }
+}

@@ -1,0 +1,47 @@
+.Resources-Head{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.Resources-H2 {
+    text-align: center;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+.Resources-P{
+    text-align: center;
+    font-size: 1.4em;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+.Resources-UL{
+    text-align: center;
+    font-size: 1.2em;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    list-style: none;
+    color: rgba(63, 0, 88, 0.8);
+    text-shadow: 1px 1px 1px rgba(63, 0, 88, 0.8)
+}
+
+.Resources-UL ul {
+    list-style: none;
+}
+
+@media screen and (max-width:900px){
+    .Resources-P{
+        width:80vw;
+    }
+    .Resources-UL{
+        width:80vw;
+    }
+}

@@ -1,0 +1,68 @@
+.History-Head{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.History-IMG1{
+    position: absolute;
+    opacity: 0.5;
+    width: 17em;
+    transform: rotate(-15deg)
+}
+
+.History-IMG2{
+    position: absolute;
+    right: 2px;
+    top: 127px;
+    opacity: 0.5;
+    width: 17em;
+    transform: rotate(12deg);
+
+}
+
+.History-P {
+    text-align: center;
+    font-size: 1.2em;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+.History-UL{
+    text-align: center;
+    font-size: 1.2em;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    list-style: none;
+    color: rgba(63, 0, 88, 0.8);
+    text-shadow: 1px 1px 1px rgba(63, 0, 88, 0.8)
+}
+
+@media screen and (max-width:1098px){
+    .History-IMG1{
+       display:none;}
+    
+    .History-IMG2{
+       display:none;
+    
+    }
+
+    .History-P {
+
+        font-size: 1.4em;
+        width: 80vw;
+
+    }
+
+    .History-UL{
+
+        font-size: 1.4em;
+        width: 80vw;
+
+
+    }
+}

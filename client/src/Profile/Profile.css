@@ -1,0 +1,27 @@
+.Profile-Head{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.Profile-P {
+    text-align: center;
+    font-size: 1.4em;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+.Profile-DeleteBtn{
+    cursor:pointer;
+}
+
+Form:hover{
+    -webkit-animation: slide 3s forwards;
+    animation: 3s slide forwards;
+}
+
+@keyframes slide{
+    100% {left:0;}
+}

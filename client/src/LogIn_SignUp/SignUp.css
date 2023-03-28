@@ -1,0 +1,17 @@
+.SignUp-Login-Form-Layout{
+    margin-top: 1.5em;
+}
+
+.SignUp-P{
+    text-align: center;
+    font-size: 1.4em;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.btn {
+    margin-top: 12px;
+}

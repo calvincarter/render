@@ -1,0 +1,56 @@
+.NavBar {
+    background-color: rgb(49, 1, 115);
+    text-align: center;
+    font-weight: bold;
+    padding-top: 1em;
+  }
+  
+  .NavBar a {
+    padding: 0.5em;
+    width: 10em;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .NavBar a:hover {
+    background-color: rgb(7, 39, 0);
+    color: white !important;
+  }
+  
+  .NavBar a.active {
+    font-weight: bolder;
+    color: white;
+    background-color: black;
+  }
+
+  .NavBar-Logo{
+    position: absolute;
+    left: 10px;
+    width: 10rem;
+    opacity: 0.6;
+    border-bottom-right-radius: 30%;
+    box-shadow: 3px 3px 4px grey;
+  }
+
+@media screen and (min-width:0px) and (max-width:550px) {
+  .NavBar-Logo{
+    display:none;
+  }
+  .NavBar a {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width:550px) and (max-width:1100px){
+  .NavBar-Logo{
+    position: absolute;
+    left: 5px;
+    width: 5rem;
+    /* opacity: 0.6;
+    border-bottom-right-radius: 30%;
+    box-shadow: 3px 3px 4px grey; */
+  }
+}

@@ -1,0 +1,59 @@
+.Meanings-Head{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.Meaning-IMG1{
+    position: absolute;
+    left: 22px;
+    top: 100px;
+    opacity: 0.5;
+    width: 15em;
+    transform: rotate(-19deg)
+}
+
+.Meaning-IMG2{
+    position: absolute;
+    right: 55px;
+    top: 110px;
+    opacity: 0.5;
+    width: 15em;
+    transform: rotate(16deg);
+
+}
+.Meanings-P {
+    text-align: center;
+    font-size: 1.4em;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+.Meanings-Keywords{
+    text-transform: capitalize;
+}
+
+@media screen and (max-width:1098px){
+    .Meaning-IMG1{
+       display:none;}
+    
+    .Meaning-IMG2{
+       display:none;
+    
+    }
+    .Meanings-Light {
+        display:none;
+    }
+    .Meanings-Shadow{
+        display:none;
+    }
+    .Meanings-P {
+        text-align: center;
+        font-size: 1.2em;
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 25px;
+    }
+}
