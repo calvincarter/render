@@ -28,7 +28,7 @@ app.use(morgan('tiny'));
 app.use(authenticateJWT);
 
 // Static directory
-app.use(express.static("./client"));
+app.use(express.static("./client/build"));
 
 app.use('/auth', authRoutes);
 app.use('/users', usersRoutes);
