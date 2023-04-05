@@ -17,10 +17,16 @@ const morgan = require('morgan');
 
 const app = express();
 
-app.use(cors());
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(cors());
 app.use(morgan('tiny'));
 app.use(authenticateJWT);
+
+// Static directory
+app.use(express.static("./client"));
 
 app.use('/auth', authRoutes);
 app.use('/users', usersRoutes);
