@@ -24,7 +24,7 @@ class User {
                   password,
                   first_name AS "firstName",
                   last_name AS "lastName",
-                  email"
+                  email
            FROM users
            WHERE username = $1`,
 			[ username ]
@@ -73,7 +73,7 @@ class User {
             last_name,
             email)
            VALUES ($1, $2, $3, $4, $5)
-           RETURNING username, first_name AS "firstName", last_name AS "lastName", email"`,
+           RETURNING username, first_name AS "firstName", last_name AS "lastName", email`,
 			[ username, hashedPassword, firstName, lastName, email ]
 		);
 
@@ -92,7 +92,7 @@ class User {
 			`SELECT username,
                   first_name AS "firstName",
                   last_name AS "lastName",
-                  email"
+                  email
            FROM users
            ORDER BY username`
 		);
@@ -112,7 +112,7 @@ class User {
 			`SELECT username,
                   first_name AS "firstName",
                   last_name AS "lastName",
-                  email"
+                  email
            FROM users
            WHERE username = $1`,
 			[ username ]
@@ -167,7 +167,7 @@ class User {
                       RETURNING username,
                                 first_name AS "firstName",
                                 last_name AS "lastName",
-                                email"`;
+                                email`;
 			console.log(querySql);
 			const result = await db.query(querySql, [ ...values, username ]);
 			console.log(result);

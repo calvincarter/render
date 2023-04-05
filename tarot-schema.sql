@@ -5,7 +5,7 @@ CREATE TABLE users (
     last_name TEXT NOT NULL,
     email TEXT NOT NULL 
         CHECK (Position('@' IN email) > 1)
-)
+);
 
 CREATE TABLE spreads (
     id SERIAL PRIMARY KEY,
@@ -16,4 +16,4 @@ CREATE TABLE spreads (
     username VARCHAR(25)
         REFERENCES users ON DELETE CASCADE
     
-)
+);
