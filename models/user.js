@@ -12,7 +12,7 @@ const { BCRYPT_WORK_FACTOR } = require('../config.js');
 class User {
 	/** authenticate user with username, password.
    *
-   * Returns { username, first_name, last_name, email, is_admin }
+   * Returns { username, first_name, last_name, email }
    *
    * Throws UnauthorizedError is user not found or wrong password.
    **/
@@ -24,8 +24,7 @@ class User {
                   password,
                   first_name AS "firstName",
                   last_name AS "lastName",
-                  email,
-                  is_admin AS "isAdmin"
+                  email"
            FROM users
            WHERE username = $1`,
 			[ username ]
@@ -47,12 +46,12 @@ class User {
 
 	/** Register user with data.
    *
-   * Returns { username, firstName, lastName, email, isAdmin }
+   * Returns { username, firstName, lastName, email }
    *
    * Throws BadRequestError on duplicates.
    **/
 
-	static async register({ username, password, firstName, lastName, email, isAdmin }) {
+	static async register({ username, password, firstName, lastName, email }) {
 		const duplicateCheck = await db.query(
 			`SELECT username
            FROM users
@@ -72,11 +71,10 @@ class User {
             password,
             first_name,
             last_name,
-            email,
-            is_admin)
-           VALUES ($1, $2, $3, $4, $5, $6)
-           RETURNING username, first_name AS "firstName", last_name AS "lastName", email, is_admin AS "isAdmin"`,
-			[ username, hashedPassword, firstName, lastName, email, isAdmin ]
+            email)
+           VALUES ($1, $2, $3, $4, $5)
+           RETURNING username, first_name AS "firstName", last_name AS "lastName", email"`,
+			[ username, hashedPassword, firstName, lastName, email ]
 		);
 
 		const user = result.rows[0];
@@ -86,7 +84,7 @@ class User {
 
 	/** Find all users.
    *
-   * Returns [{ username, first_name, last_name, email, is_admin }, ...]
+   * Returns [{ username, first_name, last_name, email }, ...]
    **/
 
 	static async findAll() {
@@ -94,8 +92,7 @@ class User {
 			`SELECT username,
                   first_name AS "firstName",
                   last_name AS "lastName",
-                  email,
-                  is_admin AS "isAdmin"
+                  email"
            FROM users
            ORDER BY username`
 		);
@@ -105,7 +102,7 @@ class User {
 
 	/** Given a username, return data about user.
    *
-   * Returns { username, first_name, last_name, is_admin}
+   * Returns { username, first_name, last_name}
    *
    * Throws NotFoundError if user not found.
    **/
@@ -115,8 +112,7 @@ class User {
 			`SELECT username,
                   first_name AS "firstName",
                   last_name AS "lastName",
-                  email,
-                  is_admin AS "isAdmin"
+                  email"
            FROM users
            WHERE username = $1`,
 			[ username ]
@@ -135,15 +131,12 @@ class User {
    * all the fields; this only changes provided ones.
    *
    * Data can include:
-   *   { firstName, lastName, password, email, isAdmin }
+   *   { firstName, lastName, password, email }
    *
-   * Returns { username, firstName, lastName, email, isAdmin }
+   * Returns { username, firstName, lastName, email }
    *
    * Throws NotFoundError if not found.
    *
-   * WARNING: this function can set a new password or make a user an admin.
-   * Callers of this function must be certain they have validated inputs to this
-   * or a serious security risks are opened.
    */
 
 	static async update(username, data) {
@@ -164,8 +157,7 @@ class User {
 			}
 			const { setCols, values } = sqlForPartialUpdate(data, {
 				firstName: 'first_name',
-				lastName: 'last_name',
-				isAdmin: 'is_admin'
+				lastName: 'last_name'
 			});
 			const usernameVarIdx = '$' + (values.length + 1);
 
@@ -175,8 +167,7 @@ class User {
                       RETURNING username,
                                 first_name AS "firstName",
                                 last_name AS "lastName",
-                                email,
-                                is_admin AS "isAdmin"`;
+                                email"`;
 			console.log(querySql);
 			const result = await db.query(querySql, [ ...values, username ]);
 			console.log(result);
