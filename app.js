@@ -4,6 +4,8 @@
 
 const express = require('express');
 const cors = require('cors');
+// Requiring path so we can use relative routes to our react HTML files
+const path = require("path");
 
 const { NotFoundError } = require('./expressError');
 
